@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:orange_course/my_theme.dart';
+import 'package:orange_course/screen/onBoarding/onBoarding.dart';
+import 'package:orange_course/shared/colors/my_theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,11 +12,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: MyTheme.liteTheme,
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.amber,
-        ),
-      ),
-    );
+      initialRoute: OnBoardingScreen.routeName,
+      routes: {
+        OnBoardingScreen.routeName: (context)=> OnBoardingScreen(),
+      },
+      );
   }
 }
+
