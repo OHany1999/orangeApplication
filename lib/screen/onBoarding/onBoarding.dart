@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:orange_course/screen/onBoarding/view_model.dart';
 import 'package:provider/provider.dart';
 
-import '../../shared/reusable components/buttons.dart';
+import '../../shared/components/buttons.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   static const String routeName = 'on_boarding';
