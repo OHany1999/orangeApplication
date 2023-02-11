@@ -20,10 +20,17 @@ class OnBoardingScreen extends StatelessWidget {
             child: Column(
               children: [
                 pro.num
-                    ? Text('true', style: TextStyle(color: Colors.black))
+                    ? Text('true',
+                        style: TextStyle(
+                          color: Colors.black,
+                        ))
                     : Text(
                         'false',
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20.0,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w700),
                       ),
                 Button(
                   buttonText: 'Login',

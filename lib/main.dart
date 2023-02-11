@@ -14,9 +14,8 @@ class MyApp extends StatelessWidget {
       theme: MyTheme.liteTheme,
       initialRoute: OnBoardingScreen.routeName,
       routes: {
-        OnBoardingScreen.routeName: (context)=> OnBoardingScreen(),
+        OnBoardingScreen.routeName: (context) => OnBoardingScreen(),
       },
-      );
+    );
   }
 }
-
