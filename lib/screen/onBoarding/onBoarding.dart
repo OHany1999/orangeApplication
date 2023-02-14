@@ -32,10 +32,6 @@ class OnBoardingScreen extends StatelessWidget {
                             fontFamily: 'Inter',
                             fontWeight: FontWeight.w700),
                       ),
-                Button(
-                  buttonText: 'Login',
-                  onPress: () {},
-                ),
               ],
             ),
           ),

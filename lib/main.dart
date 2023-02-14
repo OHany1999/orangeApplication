@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:orange_course/screen/onBoarding/onBoarding.dart';
 import 'package:orange_course/shared/colors/my_theme.dart';
 
+import 'screen/login/login.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -11,10 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: MyTheme.liteTheme,
-      initialRoute: OnBoardingScreen.routeName,
+      theme: MyTheme.lightTheme,
+      initialRoute: LoginScreen.routeName,
       routes: {
         OnBoardingScreen.routeName: (context) => OnBoardingScreen(),
+        LoginScreen.routeName: (context) => LoginScreen()
       },
     );
   }
