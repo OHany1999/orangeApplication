@@ -11,35 +11,35 @@ class OnBoardingItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screen_size = MediaQuery
-        .of(context)
-        .size;
+    var screen_size = MediaQuery.of(context).size;
     return Column(
       children: [
         SizedBox(
-          height: 100,
+          height: screen_size.height * 0.15,
         ),
         Image.asset(onBoardingModel.image),
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         Text(
           onBoardingModel.title,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 20,
             color: Colors.black,
             fontWeight: FontWeight.w700,
             fontFamily: 'Inter',
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
-        MyTextFormFaild(controller: controller,validate: (text){},text: 'fdsfd',),
         Text(
           onBoardingModel.body,
-          style: TextStyle(
-              color: Color(0xff646161), fontSize: 14, fontFamily: 'Inter',),
+          style: const TextStyle(
+            color: Color(0xff646161),
+            fontSize: 14,
+            fontFamily: 'Inter',
+          ),
           textAlign: TextAlign.center,
         ),
       ],
