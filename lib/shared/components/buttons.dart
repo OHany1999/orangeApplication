@@ -3,7 +3,6 @@ import 'package:orange_course/shared/colors/const_color.dart';
 
 class Button extends StatelessWidget {
   void Function() onPress;
-  Widget child;
   BorderStyle defaultButtonBorderStyle;
   String? text;
   Color defaultTextColor;
@@ -18,7 +17,6 @@ class Button extends StatelessWidget {
   double buttonHeight;
   Button({
     required this.onPress,
-    required this.child,
     required this.defaultButtonBorderStyle,
     required this.text,
     this.defaultTextColor = Colors.white,

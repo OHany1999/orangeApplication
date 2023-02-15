@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:orange_course/shared/components/textFormField.dart';
 
 import '../../model/onBoarding/onBoarding_model.dart';
 
@@ -6,6 +7,7 @@ class OnBoardingItem extends StatelessWidget {
   OnBoardingModel onBoardingModel;
 
   OnBoardingItem(this.onBoardingModel);
+  TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +35,7 @@ class OnBoardingItem extends StatelessWidget {
         SizedBox(
           height: 20,
         ),
+        MyTextFormFaild(controller: controller,validate: (text){},text: 'fdsfd',),
         Text(
           onBoardingModel.body,
           style: TextStyle(
