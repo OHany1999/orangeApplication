@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:orange_course/screen/login/login.dart';
 import 'package:orange_course/screen/onBoarding/Boarding_item.dart';
 import 'package:orange_course/screen/onBoarding/onBoarding_vm.dart';
 import 'package:provider/provider.dart';
@@ -14,15 +15,15 @@ class OnBoardingScreen extends StatelessWidget {
     OnBoardingModel(
         image: 'assets/images/work.png',
         title: 'Never Stop Learning',
-        body: 'Expand you Knowledge in Covid 19 Lockdown'),
+        body: 'Expand you Knowledge in Covid 19 \n Lockdown'),
     OnBoardingModel(
         image: 'assets/images/success.png',
         title: 'Complet Courses',
-        body: 'Eas to enroll Courses & Complete with in a short time'),
+        body: 'Eas to enroll Courses & Complete with \n in a short time'),
     OnBoardingModel(
         image: 'assets/images/list.png',
         title: 'Complet Courses',
-        body: 'Eas to enroll Courses & Complete with in a short time'),
+        body: 'Eas to enroll Courses & Complete with \n in a short time'),
   ];
 
 
@@ -38,7 +39,7 @@ class OnBoardingScreen extends StatelessWidget {
             children: [
               Container(
                 margin: EdgeInsets.only(top: 40,left: 280),
-                child: pro.ShowSkip(),
+                child: pro.ShowSkip(context),
               ),
               Expanded(
                 child: PageView.builder(
@@ -50,7 +51,8 @@ class OnBoardingScreen extends StatelessWidget {
                   onPageChanged: (index){
                     if(index == onBoardingList.length -1){
                       pro.IsLast();
-                    }else{
+                    }
+                    else{
                       pro.IsNotLast();
                     }
                   },
@@ -73,7 +75,12 @@ class OnBoardingScreen extends StatelessWidget {
                   SizedBox(height: 25,),
                   FloatingActionButton(
                     onPressed: () {
-                      boardingController.nextPage(duration: Duration(milliseconds: 750), curve: Curves.fastLinearToSlowEaseIn);
+                      if(pro.isLast){
+                        Navigator.pushNamed(context, LoginScreen.routeName);
+                      }else{
+                        boardingController.nextPage(duration: Duration(milliseconds: 750), curve: Curves.fastLinearToSlowEaseIn);
+                      }
+
                     },
                     child: Icon(Icons.arrow_forward_ios,color: Colors.white,),
                     backgroundColor: Color(0xffFF6600),

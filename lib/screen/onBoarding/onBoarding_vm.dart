@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:orange_course/screen/login/login.dart';
 
 class OnBoardingViewModel extends ChangeNotifier{
 
@@ -18,10 +19,12 @@ void IsLast(){
     notifyListeners();
   }
 
-Widget ShowSkip(){
+Widget ShowSkip(BuildContext context){
   if(isLast == false){
     return TextButton(
-      onPressed: (){},
+      onPressed: (){
+        Navigator.pushNamed(context,  LoginScreen.routeName);
+      },
       child: Text('skip',style: TextStyle(color: Color(0xffE872FB),fontSize: 16,fontWeight: FontWeight.w700),),
     );
   }else{

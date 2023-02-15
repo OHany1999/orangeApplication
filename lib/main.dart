@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: MyTheme.lightTheme,
-      initialRoute: LoginScreen.routeName,
+      initialRoute: OnBoardingScreen.routeName,
       routes: {
         OnBoardingScreen.routeName: (context) => OnBoardingScreen(),
         LoginScreen.routeName: (context) => LoginScreen()
