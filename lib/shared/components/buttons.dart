@@ -24,7 +24,7 @@ class Button extends StatelessWidget {
     this.defaultFontFamily = 'Inter',
     this.defaultFontWeight = FontWeight.w700,
     this.defaultButtonColor = orange,
-    this.defaultButtonBorderColor = borderColor,
+    this.defaultButtonBorderColor = orange,
     this.defaultBorderSideWidth = 0.8,
     this.defaultButtonBorderRadius = 10.0,
     this.buttonWidth = 397.0,
@@ -43,7 +43,7 @@ class Button extends StatelessWidget {
           shape: MaterialStateProperty.all(RoundedRectangleBorder(
               side: BorderSide(
                 style: defaultButtonBorderStyle,
-                color: borderColor,
+                color: defaultButtonBorderColor,
                 width: defaultBorderSideWidth,
               ),
               borderRadius: BorderRadius.circular(
