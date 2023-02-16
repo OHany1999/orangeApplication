@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:orange_course/screen/login/login.dart';
+import 'package:orange_course/screen/onBoarding/onBoardingNavigator.dart';
 
 class OnBoardingViewModel extends ChangeNotifier {
+  late OnBoardingNavigator onBoardingNavigator;
+
+  //-----------------------------------------
   bool num = false;
   void enter() {
     num = !num;
@@ -24,7 +27,8 @@ class OnBoardingViewModel extends ChangeNotifier {
     if (isLast == false) {
       return TextButton(
         onPressed: () {
-          Navigator.pushNamed(context, LoginScreen.routeName);
+
+          onBoardingNavigator.goToLoginScreen(context);
         },
         child: const Text(
           'skip',

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../shared/components/buttons.dart';
 
 // ignore: use_key_in_widget_constructors
-class LoginScreen extends StatelessWidget {
+class AccountScreen extends StatelessWidget {
   static const String routeName = 'login';
 
   @override

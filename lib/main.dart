@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:orange_course/screen/Account/AccountScreen.dart';
 import 'package:orange_course/screen/onBoarding/onBoarding.dart';
 import 'package:orange_course/shared/colors/my_theme.dart';
-
-import 'screen/login/login.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
       initialRoute: OnBoardingScreen.routeName,
       routes: {
         OnBoardingScreen.routeName: (context) => OnBoardingScreen(),
-        LoginScreen.routeName: (context) => LoginScreen()
+        AccountScreen.routeName: (context) => AccountScreen()
       },
     );
   }
