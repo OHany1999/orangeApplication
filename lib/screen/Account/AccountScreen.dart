@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:orange_course/screen/Login/LoginScreen.dart';
+import 'package:orange_course/shared/colors/const_color.dart';
 
 import '../../shared/components/buttons.dart';
 
 // ignore: use_key_in_widget_constructors
 class AccountScreen extends StatelessWidget {
-  static const String routeName = 'login';
+  static const String routeName = 'Account';
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +59,9 @@ class AccountScreen extends StatelessWidget {
             Button(
               text: 'Login',
               defaultButtonBorderStyle: BorderStyle.none,
-              onPress: () {},
+              onPress: () {
+                Navigator.pushNamed(context, LoginScreen.routeName);
+              },
               defaultFontFamily: 'Nunito',
               // text: 'Login',
             ),
@@ -72,7 +76,7 @@ class AccountScreen extends StatelessWidget {
               defaultFontFamily: 'Nunito',
               defaultFontWeight: FontWeight.w700,
               defaultFontSize: 20.0,
-              defaultButtonBorderColor: Colors.blueAccent,
+              defaultButtonBorderColor: borderColor,
               defaultButtonBorderStyle: BorderStyle.solid,
               // text: 'Create an Account',
             ),
