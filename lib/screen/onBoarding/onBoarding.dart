@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:orange_course/screen/login/login.dart';
+import 'package:orange_course/screen/Account/AccountScreen.dart';
 import 'package:orange_course/screen/onBoarding/Boarding_item.dart';
+import 'package:orange_course/screen/onBoarding/onBoardingNavigator.dart';
 import 'package:orange_course/screen/onBoarding/onBoarding_vm.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../model/onBoarding/onBoarding_model.dart';
 
-class OnBoardingScreen extends StatelessWidget {
+class OnBoardingScreen extends StatelessWidget implements OnBoardingNavigator{
   static const String routeName = 'on_boarding';
   var boardingController = PageController();
   OnBoardingViewModel onBoardingViewModel = OnBoardingViewModel();
@@ -29,7 +30,7 @@ class OnBoardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (c) => onBoardingViewModel,
+      create: (c) => onBoardingViewModel..onBoardingNavigator = this,
       builder: (context, widget) {
         var pro = Provider.of<OnBoardingViewModel>(context);
         return Scaffold(
@@ -76,7 +77,7 @@ class OnBoardingScreen extends StatelessWidget {
                     FloatingActionButton(
                       onPressed: () {
                         if (pro.isLast) {
-                          Navigator.pushNamed(context, LoginScreen.routeName);
+                          goToLoginScreen(context);
                         } else {
                           boardingController.nextPage(
                               duration: const Duration(milliseconds: 750),
@@ -97,5 +98,10 @@ class OnBoardingScreen extends StatelessWidget {
         );
       },
     );
+  }
+
+  @override
+  void goToLoginScreen(BuildContext context) {
+    Navigator.pushNamed(context, AccountScreen.routeName);
   }
 }
