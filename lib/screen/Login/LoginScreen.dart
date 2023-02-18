@@ -180,7 +180,10 @@ class LoginScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Don’t Have an Account?', textAlign: TextAlign.end,),
+                Text(
+                  'Don’t Have an Account?',
+                  textAlign: TextAlign.end,
+                ),
                 SizedBox(width: 3),
                 InkWell(
                   onTap: () {},
